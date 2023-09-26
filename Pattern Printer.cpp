@@ -111,7 +111,7 @@ int main()
 
 	cin >> x;
 
-	switch (x)
+switch (x)
 	{
 
 	case 1:
