@@ -115,6 +115,8 @@ void hrectangle(int r, int c) {
 		cout << endl;
 	}
 }
+
+
 int main()
 {
 
