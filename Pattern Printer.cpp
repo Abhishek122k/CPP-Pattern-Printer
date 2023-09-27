@@ -116,7 +116,6 @@ void hrectangle(int r, int c) {
 	}
 }
 
-
 int main()
 {
 
