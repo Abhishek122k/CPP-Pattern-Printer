@@ -1,223 +1,160 @@
 #include <iostream>
 using namespace std;
 
-void triangle(int n)
-{
-
-	for (int i = 1; i <= n; i++)
-	{
-
-		for (int j = 1; j <= n; j++)
-		{
-
-			if (j >= n - i + 1)
-			{
-
-				cout << "* ";
-			}
-
-			else
-			{
-
-				cout << "  ";
-			}
-		}
-
-		cout << endl;
-	}
-}
-
 void rectangle(int r, int c)
 {
-
-	for (int i = 1; i <= r; i++)
-	{
-
-		for (int j = 1; j <= c; j++)
-		{
-
-			cout << "* ";
-		}
-		cout << endl;
-	}
+    for (int i = 1; i <= r; i++)
+    {
+        for (int j = 1; j <= c; j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
 }
 
 void pyramid(int n)
 {
-
-	for (int i = 1; i <= n; i++)
-	{
-
-		for (int j = 1; j <= n - i; j++)
-		{
-
-			cout << "  ";
-		}
-		for (int k = 1; k <= 2 * i - 1; k++)
-		{
-
-			cout << "* ";
-		}
-		cout << endl;
-	}
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= n - i; j++)
+        {
+            cout << "  ";
+        }
+        for (int k = 1; k <= 2 * i - 1; k++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
 }
 
 void rfpyramid(int n)
 {
-
-	for (int i = n; i > 0; i--)
-	{
-
-		for (int j = 1; j <= n; j++)
-		{
-
-			if (j >= i)
-			{
-
-				cout << "* ";
-			}
-
-			else
-			{
-
-				cout << "  ";
-			}
-		}
-
-		cout << endl;
-	}
+    for (int i = n; i > 0; i--)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            if (j >= i)
+            {
+                cout << "* ";
+            }
+            else
+            {
+                cout << "  ";
+            }
+        }
+        cout << endl;
+    }
 }
 
-void lfpyramid(int n) {
-	for (int i = 0; i < n; i++) {
-
-		
-		for (int j = 0; j <= i; j++) {
-
-			cout << "* ";
-		}
-
-		
-		cout << endl;
-	}
+void lfpyramid(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            cout << "* ";
+        }
+        cout << endl;
+    }
 }
 
-void hrectangle(int r, int c) {
-	for (int i = 1; i <= r; i++) {
-		for (int j = 1; j <= c; j++) {
-			if (i == 1 || i == r || j == 1 || j == c) {
-				cout << "* ";
-			}
-			else {
-				cout << "  ";
-			}
-		}
-		cout << endl;
-	}
+void hrectangle(int r, int c)
+{
+    for (int i = 1; i <= r; i++)
+    {
+        for (int j = 1; j <= c; j++)
+        {
+            if (i == 1 || i == r || j == 1 || j == c)
+            {
+                cout << "* ";
+            }
+            else
+            {
+                cout << "  ";
+            }
+        }
+        cout << endl;
+    }
 }
 
 int main()
 {
+    int x;
 
-	int x;
+    cout << "Select a pattern:\n1-Rectangle\n2-Pyramid\n3-Right Facing Pyramid\n4-Left facing Pyramid\n5-Hollow Rectangle\n";
 
-	cout << "Select a pattern:\n1-Triangle\n2-Rectangle\n3-Pyramid\n4-Right Facing Pyramid\n5-Left facing Pyramid\n6-Hollow Rectangle\n";
+    cin >> x;
 
-	cin >> x;
+    switch (x)
+    {
+    case 1:
+        cout << "----------Rectangle Pattern----------" << endl;
 
-	switch (x)
-	{
+        int r, c;
 
-	case 1:
+        cout << "Number of rows: ";
+        cin >> r;
 
-		cout << "----------Triangle Pattern----------" << endl;
+        cout << "Number of columns: ";
+        cin >> c;
 
-		int n;
+        rectangle(r, c);
 
-		cout << "Number of rows: ";
+        break;
 
-		cin >> n;
+    case 2:
+        cout << "----------Pyramid Pattern----------" << endl;
 
-		triangle(n);
+        int m;
 
-		break;
+        cout << "Number of rows: ";
+        cin >> m;
 
-	case 2:
+        pyramid(m);
 
-		cout << "----------Rectangle Pattern----------" << endl;
+        break;
 
-		int r, c;
+    case 3:
+        cout << "----------Right Facing Pyramid Pattern----------" << endl;
 
-		cout << "Number of rows: ";
+        int n;
 
-		cin >> r;
+        cout << "Number of rows: ";
+        cin >> n;
 
-		cout << "Number of columns: ";
+        rfpyramid(n);
 
-		cin >> c;
+        break;
 
-		rectangle(r, c);
+    case 4:
+        cout << "----------Left Facing Pyramid Pattern----------" << endl;
 
-		break;
+        cout << "Number of rows: ";
+        cin >> n;
 
-	case 3:
+        lfpyramid(n);
 
-		cout << "----------Pyramid Pattern----------" << endl;
+        break;
 
-		int m;
+    case 5:
+        cout << "----------Hollow Rectangle Pattern----------" << endl;
 
-		cout << "Number of rows: ";
+        cout << "Number of rows: ";
+        cin >> r;
 
-		cin >> m;
+        cout << "Number of columns: ";
+        cin >> c;
 
-		pyramid(m);
+        hrectangle(r, c);
 
-		break;
+        break;
 
-	case 4:
+    default:
+        cout << "Still adding more." << endl;
+        break;
+    }
 
-		cout << "----------Right Facing Pyramid Pattern----------" << endl;
-
-		cout << "Number of rows: ";
-
-		cin >> n;
-
-		rfpyramid(n);
-
-		break;
-
-	case 5:
-		cout << "----------Left Facing Pyramid Pattern----------" << endl;
-
-		cout << "Number of rows: ";
-
-		cin >> n;
-
-		lfpyramid(n);
-
-		break;
-
-	case 6:
-		cout << "----------Hollow Rectangle Pattern----------" << endl;
-
-		cout << "Number of rows: ";
-
-		cin >> r;
-
-		cout << "Number of columns: ";
-
-		cin >> c;
-
-		hrectangle(r, c);
-
-		break;
-
-	default:
-
-		cout << "Still adding more." << endl;
-
-		break;
-	}
-
-	return 0;
+    return 0;
 }
