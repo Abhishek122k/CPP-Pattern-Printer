@@ -102,12 +102,25 @@ void lfpyramid(int n) {
 	}
 }
 
+void hrectangle(int r, int c) {
+	for (int i = 1; i <= r; i++) {
+		for (int j = 1; j <= c; j++) {
+			if (i == 1 || i == r || j == 1 || j == c) {
+				cout << "* ";
+			}
+			else {
+				cout << "  ";
+			}
+		}
+		cout << endl;
+	}
+}
 int main()
 {
 
 	int x;
 
-	cout << "Select a pattern:\n1-Triangle\n2-Rectangle\n3-Pyramid\n4-Right Facing Pyramid\n5-Left facing Pyramid\n";
+	cout << "Select a pattern:\n1-Triangle\n2-Rectangle\n3-Pyramid\n4-Right Facing Pyramid\n5-Left facing Pyramid\n6-Hollow Rectangle\n";
 
 	cin >> x;
 
@@ -180,6 +193,21 @@ int main()
 		cin >> n;
 
 		lfpyramid(n);
+
+		break;
+
+	case 6:
+		cout << "----------Hollow Rectangle Pattern----------" << endl;
+
+		cout << "Number of rows: ";
+
+		cin >> r;
+
+		cout << "Number of columns: ";
+
+		cin >> c;
+
+		hrectangle(r, c);
 
 		break;
 
